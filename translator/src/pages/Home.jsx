@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/page-1.css';
 import '../css/page-2.css';
 import '../css/page-3.css';
@@ -23,13 +24,12 @@ const Home = () => {
                     <img src={logo} alt="ARAG Logo" />
                 </div>
                 <ul className="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><button className="login-btn">Login</button></li>
-              
-                    <li><button className="get-started-btn">Get Started</button></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resource">Resource</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href ="/login"><button className="login-btn">Login</button></a></li>
+                    <li>< a href="/login"> <button className="get-started-btn">Get Started</button></a></li>
                 </ul>
             </nav>
 
