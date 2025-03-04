@@ -1,77 +1,155 @@
-import React from "react";
-//import Navbar from "./components/Navbar.jsx";
-//import Footer from "./components/Footer.jsx";
-import "./css/home.css";
+import React from 'react';
+import './page-1.css';
+import './page-2.css';
+import './page-3.css';
+import './page-4.css';
+import './page-5.css';
+
+// Import images
+import logo from './logo.png';
+import legal from './legal.png';
+import health from './health.png';
+import house from './house.png';
+import business from './business.png';
+import writing from './writing.png';
 
 const Home = () => {
-  return (
-    <div className="home">
-      <Navbar />
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-overlay">
-          <h1>Translation Tailored for You</h1>
-          <p>Accurate and Professional Language Solutions</p>
-          <div className="hero-buttons">
-            <button className="btn-primary">Get a Quote</button>
-            <button className="btn-secondary">Contact Us</button>
-          </div>
+    return (
+        <div>
+            {/* Navigation Bar */}
+            <nav className="navbar">
+                <div className="logo">
+                    <img src={logo} alt="ARAG Logo" />
+                </div>
+                <ul className="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><button className="login-btn">Login</button></li>
+                    <li><button className="get-started-btn">Get Started</button></li>
+                </ul>
+            </nav>
+
+            {/* Hero Section */}
+            <header className="hero-section">
+                <div className="hero-content">
+                    <h2>ARAG Trusted Tax Filing, Simplified for You!</h2>
+                    <p>ARAG's tax filing document generation website offers a seamless and secure platform to create accurate, compliant tax documents.</p>
+                </div>
+            </header>
+
+            {/* Success Section */}
+            <div className="success-section">
+                <div className="success-left">
+                    <h2>15 years and counting of <span className="highlight">success</span>.</h2>
+                    <div className="stats-grid">
+                        {[
+                            { number: '7 Lakh+', label: 'Translations' },
+                            { number: '30+', label: 'Sample Documents' },
+                            { number: '1000+', label: 'Agencies worked with' },
+                            { number: '50+', label: 'Continents of clients' },
+                            { number: '4', label: 'Awards' },
+                            { number: '8', label: 'Nominations' },
+                            { number: '2', label: 'Certifications' },
+                            { number: '5', label: 'Core fields of specialization' }
+                        ].map((item, index) => (
+                            <div key={index} className="stat-item">
+                                <h3>{item.number}</h3>
+                                <p>{item.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="success-right">
+                    <h2>99.25% <br /><span className="highlight">Success Rate</span>.</h2>
+                    <p className="only-on">Only On ARAG</p>
+                    <img src={logo} alt="ARAG Logo" className="arag-logo" />
+                </div>
+            </div>
+
+            {/* Services Section */}
+            <section className="services-section">
+                <div className="services-left">
+                    <p className="services-label">| SERVICES</p>
+                    <h1>What we offer<span className="highlight">.</span></h1>
+                    <p className="services-description">
+                        ARAG offers personal insurance, business insurance, and specialized coverage. We provide 24/7 claims support, customizable policies, and tailored risk management solutions.
+                    </p>
+                    <p className="get-started">
+                        <span className="highlight">Get started →</span>
+                    </p>
+                </div>
+                <div className="services-right">
+                    {[
+                        { img: legal, title: 'LEGAL PROTECTION', desc: 'Comprehensive legal coverage for your peace of mind.' },
+                        { img: health, title: 'HEALTH & PREVENTION', desc: 'Proactive solutions for a healthier future.' },
+                        { img: house, title: 'HOUSE, PET & TRAVEL', desc: 'Protect what matters most, wherever you are.' },
+                        { img: business, title: 'BUSINESS & ASSOCIATIONS', desc: 'Tailored coverage for professional success.' }
+                    ].map((service, index) => (
+                        <div key={index} className="service-card">
+                            <img src={service.img} alt={service.title} className="service-icon" />
+                            <h3>{service.title}</h3>
+                            <p>{service.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Achievements Section */}
+            <section className="achievements-section">
+                <div className="achievements-left">
+                    <p className="section-label">| AWARDS & CERTIFICATIONS</p>
+                    <h1>Our <span className="highlight">8 years </span> of achievements<span className="highlight">.</span></h1>
+                    <p className="achievements-description">With our dedication, we've reached remarkable milestones.</p>
+                    <div className="achievement-stats">
+                        {[
+                            { number: '23', label: 'Branches' },
+                            { number: '120', label: 'Happy Clients' },
+                            { number: '8+', label: 'Years of Excellence' },
+                            { number: '1.4k', label: 'Projects Completed' }
+                        ].map((achievement, index) => (
+                            <div key={index} className="stat">
+                                <h2 className="highlight">{achievement.number}</h2>
+                                <p>{achievement.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="achievements-right">
+                    <img src={writing} alt="Achievements Image" />
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section className="contact-section">
+                <div className="contact-left">
+                    <p className="section-label">| CONTACT</p>
+                    <h1>Connect with <span className="highlight">us.</span></h1>
+                    <p className="contact-description">
+                        Reach out through the following channels. Our team is available from 9 AM to 6 PM, GMT+1.
+                    </p>
+                    <div className="contact-details">
+                        <p>📞 +91 9894055399 | ✉ contact.liveingermany@gmail.com</p>
+                        <p>💬 +49 176 99728898 | iliveingermany</p>
+                    </div>
+                </div>
+                <div className="contact-right">
+                    <div className="circle-icons">
+                        {[
+                            { href: 'https://wa.me/1234567890', img: 'https://cdn-icons-png.flaticon.com/512/3536/3536445.png', alt: 'WhatsApp' },
+                            { href: 'mailto:example@email.com', img: 'https://cdn-icons-png.flaticon.com/512/732/732200.png', alt: 'Email' },
+                            { href: 'https://twitter.com/example', img: 'https://cdn-icons-png.flaticon.com/512/733/733635.png', alt: 'X (Twitter)' },
+                            { href: 'https://linkedin.com/in/example', img: 'https://cdn-icons-png.flaticon.com/512/145/145807.png', alt: 'LinkedIn' }
+                        ].map((icon, index) => (
+                            <a key={index} href={icon.href} target="_blank" rel="noopener noreferrer" aria-label={icon.alt}>
+                                <img src={icon.img} alt={icon.alt} className="icon" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-
-      {/* Success and Stats Section */}
-      <section className="stats">
-        <div className="stat-box">
-          <h2>15 years and counting of success.</h2>
-          <p>Trusted by top organizations worldwide.</p>
-        </div>
-        <div className="stat-box">
-          <h2>99.25%</h2>
-          <p>Success Rate</p>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="services">
-        <h2>What we offer</h2>
-        <div className="services-list">
-          <div className="service-item">Legal Translation</div>
-          <div className="service-item">Business & Marketing</div>
-          <div className="service-item">Multilingual Documentation</div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="achievements">
-        <h2>Our 8 Years of Achievements</h2>
-        <p>We have helped thousands of clients in multiple industries.</p>
-      </section>
-
-      {/* Process Section */}
-      <section className="process">
-        <h2>Translation Process</h2>
-        <div className="process-steps">
-          <div className="step">1. Analysis</div>
-          <div className="step">2. Proofreading</div>
-          <div className="step">3. Final Review</div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <h2>Selected Testimonials by Clients</h2>
-        <p>"Best translation service ever! Highly professional and accurate."</p>
-      </section>
-
-      {/* Contact Section */}
-      <section className="contact">
-        <h2>Connect with Us</h2>
-        <p>Follow us on social media.</p>
-      </section>
-
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Home;
