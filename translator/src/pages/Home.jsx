@@ -1,17 +1,18 @@
 import React from 'react';
-import './page-1.css';
-import './page-2.css';
-import './page-3.css';
-import './page-4.css';
-import './page-5.css';
+import '../css/page-1.css';
+import '../css/page-2.css';
+import '../css/page-3.css';
+import '../css/page-4.css';
+import '../css/page-5.css';
 
 // Import images
-import logo from './logo.png';
-import legal from './legal.png';
-import health from './health.png';
-import house from './house.png';
-import business from './business.png';
-import writing from './writing.png';
+import logo from '../assets/logo.png';
+import legal from '../assets/legal.png';
+import health from '../assets/health.png';
+import house from '../assets/house.png';
+import business from '../assets/business.png';
+import writing from '../assets/writing.png';
+import workBackground from '../assets/work.png';
 
 const Home = () => {
     return (
@@ -25,18 +26,22 @@ const Home = () => {
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Resources</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="#">Profile</a></li>
                     <li><button className="login-btn">Login</button></li>
+              
                     <li><button className="get-started-btn">Get Started</button></li>
                 </ul>
             </nav>
 
             {/* Hero Section */}
-            <header className="hero-section">
-                <div className="hero-content">
-                    <h2>ARAG Trusted Tax Filing, Simplified for You!</h2>
-                    <p>ARAG's tax filing document generation website offers a seamless and secure platform to create accurate, compliant tax documents.</p>
-                </div>
-            </header>
+            <header
+    className="hero-section"
+    style={{backgroundImage: `url(${workBackground})`, backgroundSize: 'cover',  backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <div className="hero-content">
+        <h2>ARAG Trusted Tax Filing, Simplified for You!</h2>
+        <p>ARAG's tax filing document generation website offers a seamless and secure platform to create accurate, compliant tax documents.</p>
+          </div>
+      </header>
 
             {/* Success Section */}
             <div className="success-section">
