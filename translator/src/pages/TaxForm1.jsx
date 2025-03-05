@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/TaxForm.css";
 
-const TaxForm = () => {
+const TaxForm1 = () => {
   return (
     <div className="form-container">
       <div className="form-group">
@@ -167,4 +167,4 @@ const TaxForm = () => {
   );
 };
 
-export default TaxForm;
+export default TaxForm1;

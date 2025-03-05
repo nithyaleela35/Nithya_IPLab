@@ -1,16 +1,24 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../css/resource.css";
 import { FaTh, FaTrash, FaTimes } from "react-icons/fa";
 
 const Resource = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="resource-container">
       {/* Sidebar */}
-      <aside className={`sidebar ${sidebarOpen ? "open" : ""}`} style={{ backgroundColor: sidebarOpen ? "#FF5722" : "#fff" }}>
-        <button className="close-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
+      <aside
+        className={`sidebar ${sidebarOpen ? "open" : ""}`}
+        style={{ backgroundColor: sidebarOpen ? "#FF5722" : "#fff" }}
+      >
+        <button
+          className="close-btn"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
           <FaTimes />
         </button>
         <div className="logo">
@@ -18,7 +26,7 @@ const Resource = () => {
         </div>
         <nav>
           <ul>
-            <li>Home</li>
+            <li><Link to="/">Home</Link></li>
             <li>Contact</li>
             <li className="active">Resources</li>
             <li>Documents</li>
@@ -31,7 +39,10 @@ const Resource = () => {
       {/* Main Content */}
       <main className="main-content">
         <div className="top-bar">
-          <button className="grid-icon" onClick={() => setSidebarOpen(!sidebarOpen)}>
+          <button
+            className="grid-icon"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
             <FaTh />
           </button>
           <div className="actions">
@@ -43,7 +54,13 @@ const Resource = () => {
               <option>2021</option>
             </select>
             <button className="view-sample">View Sample</button>
-            <button className="create-new">+ Create New</button>
+            {/* Redirect to Question page */}
+            <button
+              className="create-new"
+              onClick={() => navigate("/question")}
+            >
+              + Create New
+            </button>
           </div>
         </div>
         <h2>Previous Year Documents</h2>
@@ -65,7 +82,9 @@ const Resource = () => {
                   <td>{year === 2024 ? "25 December" : "26 December"}</td>
                   <td>{year}</td>
                   <td>{year === 2024 ? "6:05:32" : "10:30:54"}</td>
-                  <td><FaTrash className="delete-icon" /></td>
+                  <td>
+                    <FaTrash className="delete-icon" />
+                  </td>
                 </tr>
               ))}
             </tbody>
